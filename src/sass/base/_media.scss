@@ -12,6 +12,18 @@
       width: 225px;
     }
   }
+  .carousel {
+    padding: 60px 0;
+    .carousel__inner {
+      width: 630px;
+    }
+    .slick-slide {
+      width: 630px;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 @media (max-width: 767px) {
   .container {
@@ -66,6 +78,18 @@
     .button {
       width: 250px;
       height: 40px;
+    }
+  }
+  .carousel {
+    padding: 45px 0;
+    .carousel__inner {
+      width: 500px;
+    }
+    .slick-slide {
+      width: 500px;
+      img {
+        width: 100%;
+      }
     }
   }
 }
@@ -148,6 +172,24 @@
     .button {
       width: 200px;
       height: 35px;
+    }
+  }
+  .carousel {
+    padding: 30px 0;
+    .carousel__inner {
+      width: 250px;
+    }
+    .slick-slide {
+      width: 250px;
+      img {
+        width: 100%;
+      }
+    }
+    .slick-dots {
+      button {
+        width: 10px;
+        height: 10px;
+      }
     }
   }
 }
