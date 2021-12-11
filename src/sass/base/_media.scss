@@ -419,9 +419,17 @@
     &__social-item {
       width: 20px;
       height: 20px;
+      &:hover {
+        box-shadow: none;
+      }
       img {
         height: 10px;
       }
+    }
+  }
+  .button {
+    &:hover {
+      box-shadow: none;
     }
   }
 }

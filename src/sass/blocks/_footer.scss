@@ -41,6 +41,13 @@
     border: 2px solid #fff;
     border-radius: 100%;
     align-items: center;
+    transition: .3s all;
+    &:hover {
+      box-shadow: 3px 3px 5px #FFFFFF;
+    }
+    &:active {
+      box-shadow: none;
+    }
     img {
       height: 27px;
     }

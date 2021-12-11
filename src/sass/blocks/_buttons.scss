@@ -10,6 +10,13 @@
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
+  transition: .3s all;
+  &:hover {
+    box-shadow: 2px 2px 5px $main-color;
+  }
+  &:active {
+    box-shadow: none;
+  }
   &_main {
     width: 303px;
     height: 54px;
