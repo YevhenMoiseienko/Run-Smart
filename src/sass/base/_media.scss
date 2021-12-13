@@ -88,6 +88,12 @@
       }
     }
   }
+  .modal {
+    button {
+      width: 300px;
+      height: 50px;
+    }
+  }
 }
 @media (max-width: 767px) {
   .container {
@@ -231,6 +237,22 @@
       img {
         height: 15px;
       }
+    }
+  }
+  .modal {
+    width: 300px;
+    min-height: 300px;
+    padding: 28px 40px 20px 40px ;
+    .feed-form {
+      input {
+        width: 220px;
+        height: 40px;
+      }
+    }
+    button {
+      width: 220px;
+      height: 40px;
+      font-size: 14px;
     }
   }
 }
@@ -430,6 +452,28 @@
   .button {
     &:hover {
       box-shadow: none;
+    }
+  }
+  .modal {
+    width: 220px;
+    min-height: 250px;
+    padding: 10px;
+    .feed-form {
+      input {
+        width: 200px;
+        height: 40px;
+      }
+    }
+    &__subtitle {
+      font-size: 12px;
+    }
+    &__descr {
+      font-size: 10px;
+    }
+    button {
+      width: 200px;
+      height: 40px;
+      font-size: 12px;
     }
   }
 }

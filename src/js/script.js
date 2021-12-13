@@ -36,4 +36,73 @@ $(document).ready(function(){
 
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
+
+    //Modal
+
+    $('[data-modal=consultation]').on('click', function () {
+       $('.overlay, #consultation').fadeIn('slow');
+    });
+    $('.modal__close').on('click', function () {
+        $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
+    });
+
+    $('.button_mini').each(function (i) {
+        $(this).on('click', function () {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        })
+    });
+
+    function validate(item) {
+        $(item).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+            },
+            messages: {
+                name: {
+                    required: "Введите Ваше имя",
+                    minlength: jQuery.validator.format("Необходимо ввести минимум {0} символа")
+                },
+                phone: "Введите Ваш номер телефона",
+                email: {
+                    required: "Введите Вашу почту",
+                    email: "Неверный адрес почты"
+                }
+            }
+        });
+    }
+
+    validate('#consultation-form');
+    validate('#consultation form');
+    validate('#order form');
+
+    $('input[name=phone]').mask("+38(999) 999-99-99");
+
+    $('form').submit(function (e) {
+        e.preventDefault();
+
+        if(!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function () {
+           $(this).find("input").val("");
+           $('#consultation, #order').fadeOut();
+           $('.overlay, #thanks').fadeIn('slow');
+           $('form').trigger('reset');
+        });
+        return false;
+    });
 });
