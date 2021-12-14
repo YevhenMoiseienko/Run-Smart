@@ -254,6 +254,10 @@
       height: 40px;
       font-size: 14px;
     }
+    label.error {
+      font-size: 14px;
+      width: 220px;
+    }
   }
 }
 @media (max-width: 575px) {
@@ -474,6 +478,10 @@
       width: 200px;
       height: 40px;
       font-size: 12px;
+    }
+    label.error {
+      font-size: 12px;
+      width: 200px;
     }
   }
   .pageup {
